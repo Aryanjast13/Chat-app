@@ -33,7 +33,9 @@ app.use(
 
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
-
+app.use("/api/ping", (req, res) => {
+  res.status(200).send("✅ Server is awake!");
+})
 // All other routes → index.html
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../../frontend/dist", "index.html"));
