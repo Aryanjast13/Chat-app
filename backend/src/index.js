@@ -36,7 +36,7 @@ app.use("/api/messages", messageRoutes);
 
 // All other routes → index.html
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "frontend", "index.html"));
+  res.sendFile(path.join(__dirname, "../frontend", "index.html"));
 });
 
 try {
