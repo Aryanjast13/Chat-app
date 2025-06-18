@@ -20,7 +20,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Serve static frontend
-app.use(express.static(path.join(__dirname, "frontend")));
+app.use(express.static(path.join(__dirname, "../../frontend/dist")));
 
 app.use(express.json());
 app.use(cookieParser());
@@ -36,7 +36,7 @@ app.use("/api/messages", messageRoutes);
 
 // All other routes → index.html
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend", "index.html"));
+  res.sendFile(path.join(__dirname, "../../frontend/dist", "index.html"));
 });
 
 try {
